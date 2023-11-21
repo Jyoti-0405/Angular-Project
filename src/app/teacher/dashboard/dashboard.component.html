@@ -1,0 +1,79 @@
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-auto">
+            <h1>Result Management System</h1>
+            
+        </a>
+        <button type="button" (click)="add()" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-success">Add Record</button>
+        <a href="homepage" routerLink="/homepage" class="btn btn-outline-success mx-3">Log Out</a>
+    </div>
+  </nav>
+    <table class="table mt 3">
+      <thead >
+        <tr>
+          <th scope="col">Sr.No</th>
+          <th scope="col">Roll No</th>
+          <th scope="col">Name</th>
+          <th scope="col">DOB</th>
+          <th scope="col">Score</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of allstudentdata">
+          <td>{{data.id}}</td>
+          <td>{{data.rollno}}</td>
+          <td>{{data.name}}</td>
+          <td>{{data.dob}}</td>
+          <td>{{data.score}}</td>
+        
+          <td>
+            
+              <button (click)="edit(data)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-info">edit</button>
+              <button class="btn btn-outline-danger mx-3"(click)="deletestud(data)">delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Student Details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form [formGroup]="formValue">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label" >Roll No</label>
+                    <input type="number" formControlName="rollno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Student Roll No">
+  <small *ngIf="formValue.get('rollno')?.invalid && formValue.get('rollno')?.touched"class="text-danger">Roll no is required</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Name</label>
+                    <input type="name" formControlName="name" class="form-control" id="exampleInputPassword1"placeholder="Enter Student Name">
+                    <small *ngIf="formValue.get('name')?.invalid && formValue.get('name')?.touched"class="text-danger">Name is required</small>
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">DOB</label>
+                      <input type="date" formControlName="dob" class="form-control" id="exampleInputPassword1" placeholder="Student Date of Birth">
+                      <small *ngIf="formValue.get('dob')?.invalid && formValue.get('dob')?.touched"class="text-danger">DOB is required</small>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Score</label>
+                      <input type="number"formControlName="score" class="form-control" id="exampleInputPassword1" placeholder="Student Score">
+                      <small *ngIf="formValue.get('score')?.invalid && formValue.get('score')?.touched"class="text-danger">Score is required</small>
+                    </div>
+                </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button *ngIf="showadd" type="button"(click)="addstudent()" [disabled]="formValue.invalid" class="btn btn-primary">Add</button>
+            <button *ngIf="showupdate" type="button" (click)="update()"class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  

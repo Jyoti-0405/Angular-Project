@@ -1,0 +1,47 @@
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-auto">
+            <h1>Result Management System</h1>
+            
+        </a>
+        <a href="homepage" routerLink="/homepage" class="btn btn-outline-success mx-3">Log Out</a>
+    </div>
+</nav>
+
+<div class="wrapper fadeInDown mt-5">
+    <div id="formContent">
+
+        <!-- Tabs Titles -->
+        <div class="text-center p-3 mb-3 text-white bg-info rounded shadow-sm">
+            <div class="lh-1">
+                <h1 class="h3 mb-0 text-white lh-1">Find the Record</h1>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <form #recordForm="ngForm" (ngSubmit)="findRecord(recordForm.value)">
+            <div class="mb-3 mt-3">
+                <label for="Rollno" class="text-info col-sm-5">
+                    <h4>Roll Number : </h4>
+                </label>
+                <input type="number" id="rollnumber" class="fadeIn second" name="rollno" #rollno="ngModel"
+                    placeholder="Enter the rollnumber" required ngModel />
+                <div *ngIf="rollno.invalid && rollno.touched" class="text-danger" id="alert">
+                    Enter valid rollnumber
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="Name" class="text-info col-sm-5">
+                    <h4>Name : </h4>
+                </label>
+                <input #name="ngModel" type="text" id="name" class="fadeIn second" name="name" placeholder="Enter the name" required
+                    ngModel>
+                <div *ngIf="name.invalid && name.touched" class="text-danger" id="alert">
+                    Enter valid username
+                </div>
+            </div>
+            <input [disabled]="recordForm.invalid" type="submit" class="fadeIn fourth" value="Find Record">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "rollno": 100,
+      "name": "Jyoti Kumari",
+      "dob": "2021-01-04",
+      "score": 300
+    }
+  ],
+  "signupUsers": [
+    {
+      "fullname": "Jyoti Kumari",
+      "email": "jyoti.kumari01@nagarro.com",
+      "password": "jk@123",
+      "id": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

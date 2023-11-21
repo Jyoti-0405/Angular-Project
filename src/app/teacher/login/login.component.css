@@ -1,0 +1,25 @@
+.form-box{
+    width:400px;
+    height: 400px;
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    z-index: 1;;
+    transform: translate(-50%,-50%);
+    background: rgb(47, 112, 41);
+    background: linear-gradient(90deg,rgb(193, 193, 193)0%,rgb(193, 193, 193)100%);
+
+}
+.card h1,
+h3{
+    color:rgb(0, 4, 14);
+}
+label{
+    color: rgb(0, 4, 14);
+}
+.btn-success {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #00050e;
+    float:right;
+}

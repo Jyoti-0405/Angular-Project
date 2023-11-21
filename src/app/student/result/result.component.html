@@ -1,0 +1,56 @@
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-auto">
+            <h1>Result Management System</h1>
+            
+        </a>
+        <a href="homepage" routerLink="/homepage" class="btn btn-outline-success mx-3">Log Out</a>
+    </div>
+</nav>
+
+<!-- <div *ngIf="isAuth()">
+    {{homepagerouting()}}
+</div> -->
+
+<div class="wrapper fadeInDown mt-1">
+    <div id="formContent">
+
+        <!-- Tabs Titles -->
+        <div class="text-center p-3 mb-3 text-white bg-info rounded shadow-sm">
+            <div class="lh-1">
+                <h1 class="h3 mb-0 text-white lh-1">Result</h1>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="mb-2 mt-2">
+            <label for="Rollno" class="text-info col-sm-5">
+                <h4>Roll Number : </h4>
+            </label>
+            <input type="text" id="rollnumber" class="fadeIn second" name="rollno" [value] = "record.rollno"
+                required disabled>
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="name" class="text-info col-sm-5">
+                <h4>Name : </h4>
+            </label>
+            <input type="text" id="name" class="fadeIn second" name="name" [value] = "record.name"
+                required disabled>
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="dob" class="text-info col-sm-5">
+                <h4>Date of Birth : </h4>
+            </label>
+            <input type="text" id="dob" class="fadeIn second" name="dob" [value] = "record.dob"
+                required disabled>
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="score" class="text-info col-sm-5">
+                <h4>Score : </h4>
+            </label>
+            <input type="text" id="score" class="fadeIn second" name="score" [value] = "record.score"
+                required disabled>
+        </div>
+        <input type="submit" class="fadeIn fourth" value="Back" routerLink="/searchrecord">
+    </div>
+</div>
